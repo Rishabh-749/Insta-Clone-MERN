@@ -1,0 +1,84 @@
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+  background: rgba(8, 17, 32, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  .nav-logo {
+    font-family: 'Pacifico', cursive, sans-serif; /* Fallback if no specific font, resembles Instagram */
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+
+    .create-post-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all 0.3s ease;
+
+      i {
+        font-size: 1.3rem;
+      }
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+      
+      &:active {
+        transform: translateY(0);
+      }
+    }
+  }
+}
+
+@media (max-width: 520px) {
+  .nav-bar {
+    padding: 12px 16px;
+    
+    .nav-logo {
+      font-size: 1.5rem;
+    }
+    
+    .nav-actions .create-post-btn {
+      padding: 6px 12px;
+      
+      span {
+        display: none; /* Hide text on small screens, keep only icon */
+      }
+      i {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

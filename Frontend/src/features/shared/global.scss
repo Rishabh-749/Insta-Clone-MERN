@@ -1,0 +1,61 @@
+@use "../auth/style/form";
+
+@mixin reset-box {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@mixin inherit-font {
+  font: inherit;
+}
+
+:root {
+  --bg: #081120;
+  --card: rgba(10, 18, 34, 0.86);
+  --line: rgba(255, 255, 255, 0.12);
+  --text: #f8fbff;
+  --muted: #a9b6cc;
+  --accent: #6ee7c8;
+  --accent-2: #71a7ff;
+  --radius: 24px;
+}
+
+* {
+  @include reset-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  min-width: 320px;
+  background: radial-gradient(circle at top, rgba(113, 167, 255, 0.2), transparent 30%),
+    linear-gradient(135deg, #040814, var(--bg) 55%, #0c1d37);
+  color: var(--text);
+  font: 16px/1.5 "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+a {
+  @include inherit-font;
+}
+
+button,
+a {
+  color: inherit;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
